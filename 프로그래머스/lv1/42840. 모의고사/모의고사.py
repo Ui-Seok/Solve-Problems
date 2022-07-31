@@ -7,10 +7,10 @@ def solution(answers):
     cnt_2 = 0
     cnt_3 = 0
     
-    for i in range(len(answers)):
-        cnt_1 = get_rank(answers[i], person_1[i%5], cnt_1)
-        cnt_2 = get_rank(answers[i], person_2[i%8], cnt_2)
-        cnt_3 = get_rank(answers[i], person_3[i%10], cnt_3)
+    for i, ans in enumerate(answers):
+        cnt_1 = get_rank(ans, person_1[i%5], cnt_1)
+        cnt_2 = get_rank(ans, person_2[i%8], cnt_2)
+        cnt_3 = get_rank(ans, person_3[i%10], cnt_3)
         
         
     max_num = max(cnt_1, cnt_2, cnt_3)
