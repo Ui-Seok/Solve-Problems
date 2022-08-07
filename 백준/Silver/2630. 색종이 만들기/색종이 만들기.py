@@ -14,13 +14,13 @@ def cutting(box):
         elif box == 0:
             white += 1
             return None
-    elif len(box) == n:
-        if box == 1:
-            blue += 1
-            return None
-        elif box == 0:
-            white += 1
-            return None
+    # elif len(box) == n:
+    #     if box == 1:
+    #         blue += 1
+    #         return None
+    #     elif box == 0:
+    #         white += 1
+    #         return None
 
     cut_num = len(box) // 2
     box_L = box[:cut_num]
