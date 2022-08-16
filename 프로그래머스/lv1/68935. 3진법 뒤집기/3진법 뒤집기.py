@@ -1,8 +1,8 @@
 '''
 시작시간: 02시 15분
-종료시간: 
+종료시간: 02시 31분
 '''
-
+# 다시 풀기
 def solution(n):
     answer = 0
     result = convert(n)
