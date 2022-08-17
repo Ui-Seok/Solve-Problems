@@ -4,12 +4,7 @@ arr = [int(input()) for _ in range(n)]
 # 산술평균
 def average(arr):
     answer = sum(arr) / len(arr)
-    # 음수일때의 반올림 구하기
-    if answer < 0:
-        return int(round(answer))
-    # 양수일때의 반올림 구하기 -> 2.5일때 3으로 반올림 해주는 코드
-    else:
-        return int(answer) + 1 if (answer - int(answer)) >= 0.5 else int(answer)
+    return round(answer)
 
 # 중앙값
 def median(arr):
