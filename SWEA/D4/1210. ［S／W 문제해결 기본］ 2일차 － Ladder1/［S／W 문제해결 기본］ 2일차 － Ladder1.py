@@ -1,3 +1,8 @@
+'''
+시작시간: 11시 15분
+종료시간: 12시 03분
+'''
+
 for tc in range(1, 11):
     t = int(input())
     ladder = [list(map(int, input().split())) for _ in range(100)]
