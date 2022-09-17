@@ -11,9 +11,9 @@ def solution(answers):
         cnt_1 = get_rank(ans, person_1[i%5], cnt_1)
         cnt_2 = get_rank(ans, person_2[i%8], cnt_2)
         cnt_3 = get_rank(ans, person_3[i%10], cnt_3)
-        
-        
+            
     max_num = max(cnt_1, cnt_2, cnt_3)
+    
     if max_num == cnt_1:
         answer.append(1)
     if max_num == cnt_2:
