@@ -14,5 +14,6 @@ def convert(n):
     result = ''
     while n > 0:
         n, convt = divmod(n, 3)
+        print(n, convt)
         result += str(convt)
     return result
