@@ -1,11 +1,18 @@
-from itertools import permutations
-
 n, m = map(int, input().split())
-arr = list(i for i in range(1, n+1))
+answer = list()
+visited = [False] * (n+1)
 
-nums = permutations(arr, m)
+def DFS(num):
+    if num == m:
+        print(' '.join(map(str, answer)))
+        return
+    else:
+        for i in range(1, n+1):
+            if not visited[i]:
+                visited[i] = True
+                answer.append(i)
+                DFS(num+1)
+                answer.pop()
+                visited[i] = False
 
-for i in nums:
-    for j in i:
-        print(j, end=' ')
-    print()
+DFS(0)
