@@ -42,9 +42,8 @@ else:
     # 과장을 할 수 있는 파티 확인
     answer = 0
     for k, v in party_info:
-        for v_ in v:
-            if check[v_]:
-                break
+        if check[v[0]]:
+            continue
         else:
             answer += 1
     print(answer)
