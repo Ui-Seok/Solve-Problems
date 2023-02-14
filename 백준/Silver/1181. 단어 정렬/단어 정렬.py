@@ -1,8 +1,11 @@
 n = int(input())
+arr = dict()
 
-string_list = list(set([input() for _ in range(n)]))
+for _ in range(n):
+    a = input()
+    arr[a] = len(a)
 
-answer = sorted(string_list, key = lambda x: (len(x), x))
+arr = sorted(arr.items(), key=lambda x: (x[1], x[0]))
 
-for i in answer:
-    print(i)
+for k in arr:
+    print(k[0])
