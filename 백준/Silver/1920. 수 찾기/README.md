@@ -4,11 +4,11 @@
 
 ### 성능 요약
 
-메모리: 46416 KB, 시간: 704 ms
+메모리: 46740 KB, 시간: 492 ms
 
 ### 분류
 
-이분 탐색(binary_search), 자료 구조(data_structures)
+이분 탐색(binary_search), 자료 구조(data_structures), 정렬(sorting)
 
 ### 문제 설명
 
