@@ -1,35 +1,41 @@
 from collections import deque
+import sys
+input = sys.stdin.readline
 
-n = int(input())
-_map = int(input())
-arr = dict()
+computers = int(input())
+nodes = int(input())
 
-for _ in range(_map):
+graph = dict()
+for _ in range(nodes):
     a, b = map(int, input().split())
 
-    if arr.get(a) == None:
-        arr[a] = [b]
+    if graph.get(a):
+        graph[a].append(b)
     else:
-        arr[a].append(b)
-
-    if arr.get(b) == None:
-        arr[b] = [a]
+        graph[a] = [b]
+    
+    if graph.get(b):
+        graph[b].append(a)
     else:
-        arr[b].append(a)
+        graph[b] = [a]
 
-visitied = [False for _ in range(n+1)]
-visitied[1] = True
+if graph.get(1):
+    check_list = [False for _ in range(computers + 1)]
+    q = deque()
+    q.append(1)
+    answer = 0
 
-q = deque()
-q.append(1)
-cnt = 0
+    while q:
+        x = q.popleft()
+        for i in graph[x]:
+            if check_list[i] == False:
+                check_list[i] = True
+                q.append(i)
+                answer += 1
+            else:
+                continue
+        
+    print(answer - 1)
 
-while q:
-    x = q.popleft()
-    for i in arr[x]:
-        if not visitied[i]:
-            cnt += 1
-            q.append(i)
-            visitied[i] = True
-
-print(cnt)
+else:
+    print(0)
