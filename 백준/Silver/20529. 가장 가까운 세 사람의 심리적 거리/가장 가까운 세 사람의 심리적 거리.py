@@ -10,7 +10,7 @@ for _ in range(tc):
     n = int(input())
     mbti_list = list(input().split())
 
-    if n >= 48:
+    if n > 32:
         print(0)
         continue
 
