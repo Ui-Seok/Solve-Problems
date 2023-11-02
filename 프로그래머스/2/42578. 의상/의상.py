@@ -1,17 +1,15 @@
 def solution(clothes):
-    from collections import Counter
+    cloth_type = {}
     
-    cloth = []
-    part = []
     for a, b in clothes:
-        cloth.append(a)
-        part.append(b)
+        if cloth_type.get(b):
+            cloth_type[b] += 1
+        else:
+            cloth_type[b] = 2
     
-    wear_cnt = Counter(part)
     cnt = 1
-    
-    for key in wear_cnt:
-        cnt *= wear_cnt[key] + 1
+    for ct in cloth_type:
+        cnt *= cloth_type[ct]
     
     answer = cnt - 1
     return answer
